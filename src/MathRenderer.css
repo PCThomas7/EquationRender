@@ -1,0 +1,242 @@
+/* Math renderer styling */
+.math-renderer {
+  width: 100%;
+}
+
+.math-line {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.math-line:last-child {
+  margin-bottom: 0;
+}
+
+/* Styling for \item commands that have been converted to bullet points */
+.math-line:has(> span:first-child:contains('•')) {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+/* Ensure math blocks are properly displayed */
+.block.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Enumerate environment styling */
+.enumerate-list {
+  margin: 1rem 0;
+  padding-left: 2rem;
+  list-style-type: decimal;
+}
+
+.enumerate-item {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.enumerate-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Itemize environment styling */
+.itemize-list {
+  margin: 1rem 0;
+  padding-left: 2rem;
+  list-style-type: disc;
+}
+
+.itemize-item {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.itemize-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Section and subsection styling */
+.latex-section {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.latex-subsection {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #444;
+}
+
+/* Alignment environments */
+.latex-center {
+  text-align: center;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.latex-flushleft {
+  text-align: left;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.latex-flushright {
+  text-align: right;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+/* Table environments */
+.latex-tabular {
+  margin: 1rem auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: auto;
+  max-width: 100%;
+}
+
+/* Add proper border styles for tabular environments */
+.latex-tabular-bordered {
+  border: 1px solid #000;
+}
+
+.latex-tabular-bordered .tabular-cell {
+  border: 1px solid #000;
+}
+
+.tabular-cell {
+  padding: 0.5rem;
+  vertical-align: middle;
+  min-width: 2rem;
+}
+
+/* Style for multicolumn cells */
+.multicolumn-cell {
+  font-weight: normal;
+  background-color: #f9fafb;
+}
+
+/* Basic styling for non-bordered cells */
+.latex-tabular:not(.latex-tabular-bordered) .tabular-cell {
+  border: 1px solid #e5e7eb;
+}
+
+/* Horizontal line styling for tabular */
+.with-hline {
+  border-top: 2px solid #000;
+}
+
+/* Ensure math content in tables renders properly */
+.tabular-cell .mjx-chem,
+.tabular-cell .mjx-math {
+  display: inline-block;
+}
+
+/* Special styling for Roman numerals and label notation */
+.roman-numeral, .label-notation {
+  font-weight: bold;
+  display: inline-block;
+  min-width: 2.5rem;
+  font-size: 1em;
+  padding: 0 0.25rem;
+}
+
+/* First column cells - often contain identifiers */
+.tabular-cell:first-child {
+  min-width: 2.5rem;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.latex-table {
+  margin: 1.5rem auto;
+  width: auto;
+  text-align: center;
+}
+
+/* Style for text within fractions */
+.mjx-mfrac {
+  line-height: normal !important;
+}
+
+/* Special styling for triangle symbols */
+.tabular-cell .mjx-char {
+  font-family: STIXGeneral, 'Arial Unicode MS', serif;
+}
+
+.latex-table {
+  margin: 1.5rem auto;
+  width: auto;
+}
+
+/* Quote environments */
+.latex-quote, .latex-quotation {
+  margin: 1rem 2rem;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid #ddd;
+  font-style: italic;
+}
+
+/* Definition-based list */
+.description-list {
+  margin: 1rem 0;
+  padding-left: 1rem;
+}
+
+.description-term {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.description-item {
+  margin-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Theorem-like environments */
+.latex-theorem, .latex-lemma, .latex-definition, .latex-proof {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border-left: 3px solid #4a5568;
+}
+
+.latex-theorem {
+  background-color: rgba(66, 153, 225, 0.1);
+}
+
+.latex-lemma {
+  background-color: rgba(154, 230, 180, 0.1);
+}
+
+.latex-definition {
+  background-color: rgba(214, 188, 250, 0.1);
+}
+
+.latex-proof {
+  background-color: rgba(255, 248, 230, 0.1);
+}
+
+/* Text formatting environments */
+.latex-verbatim {
+  font-family: monospace;
+  background-color: #f8f8f8;
+  padding: 0.75rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.latex-minipage {
+  display: inline-block;
+  vertical-align: top;
+  width: auto;
+}
