@@ -1,0 +1,361 @@
+.katex-container {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  padding: 10px;
+  overflow-x: auto;
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.katex-error {
+  color: #cc0000;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+
+/* Styling for display mode vs inline mode */
+.katex-display-mode {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.katex-inline-mode {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0.2em;
+}
+
+/* Styling for LaTeX environments */
+.katex-env {
+  margin: 1em 0;
+  padding: 0.5em 0;
+}
+
+/* Enumerate environment styling */
+.enumerate-list {
+  margin-left: 1.5em;
+  padding-left: 1em;
+}
+
+.enumerate-item {
+  margin-bottom: 0.5em;
+}
+
+/* Itemize environment styling */
+.itemize-list {
+  list-style-type: disc;
+  margin-left: 1.5em;
+  padding-left: 1em;
+}
+
+.itemize-item {
+  margin-bottom: 0.5em;
+}
+
+/* Section and subsection styling */
+.latex-section {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 1em 0 0.5em 0;
+}
+
+.latex-subsection {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0.8em 0 0.4em 0;
+}
+
+/* Improve display for chemistry equations */
+.katex .mord.text {
+  font-family: 'Times New Roman', serif;
+}
+
+/* Ensure proper spacing for subscripts and superscripts */
+.katex .msupsub {
+  text-align: left;
+}
+
+/* Improve display of limits in summations and integrals */
+.katex .mop + .msupsub {
+  margin-left: 0.1em;
+}
+
+/* Improve display of large operators */
+.katex .mop {
+  margin: 0 0.1em;
+}
+
+/* Improve display on mobile devices */
+@media (max-width: 768px) {
+  .katex-container {
+    font-size: 0.9em;
+  }
+}
+
+/* Styling for array environments */
+.katex .array-left-delimiter,
+.katex .array-right-delimiter {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.2em;
+}
+
+/* Improve spacing for arrays */
+.katex .array-row {
+  margin-bottom: 0.25em;
+}
+
+/* Improve alignment for text in arrays */
+.katex .array-row .text {
+  text-align: left;
+}
+
+/* Add styling for right-aligned text labels */
+.katex .right-label {
+  margin-left: 0.5em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Fix for left/right delimiter sizing */
+.katex .delimsizing.size3,
+.katex .delimsizing.size4 {
+  vertical-align: middle;
+}
+
+/* Line styling */
+.katex-line {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.katex-line-break {
+  height: 1rem;
+}
+
+.katex-formula-container {
+  display: inline-block;
+}
+
+.katex-after-text {
+  margin-left: 0.5rem;
+  font-weight: normal;
+  color: #333;
+}
+
+/* Styling for delimiters in array environments */
+.katex .mclose {
+  color: inherit;
+}
+
+/* Special styling for specific delimiters if needed */
+.katex .mclose.delimsizing {
+  color: inherit;
+}
+
+/* Fix for the array environment */
+.katex .array-row {
+  height: auto !important;
+}
+
+/* Ensure text in arrays is properly aligned */
+.katex .text {
+  font-family: 'Times New Roman', serif;
+}
+
+/* Ensure proper vertical alignment of array content */
+.katex-display {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Ensure proper spacing between lines */
+.katex-display + .katex-display {
+  margin-top: 1rem;
+}
+
+/* Styling for relation symbols */
+.katex .mrel {
+  margin: 0 0.2em;
+  vertical-align: middle;
+}
+
+/* Improve spacing around relation symbols */
+.katex .mrel + .mord,
+.katex .mord + .mrel {
+  margin-left: 0.15em;
+  margin-right: 0.15em;
+}
+
+/* Ensure proper alignment of relation symbols */
+.katex .mrel.amsrm {
+  position: relative;
+  top: -0.02em;
+}
+
+/* Improve display of double arrow relations */
+.katex .mrel .amsrm {
+  font-size: 0.9em;
+}
+
+/* Styling for text content */
+.katex-text {
+  margin-bottom: 0.5rem;
+  font-family: 'Times New Roman', serif;
+  line-height: 1.5;
+}
+
+/* Styling for bullet points (used for \item) */
+.katex-text:has(> span:first-child:contains('•')) {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+/* Styling for LaTeX environments */
+.katex-env {
+  margin: 1em 0;
+  padding: 0.5em;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Specific styling for different environment types */
+.katex-env-theorem,
+.katex-env-lemma,
+.katex-env-corollary,
+.katex-env-definition,
+.katex-env-remark {
+  border-left: 3px solid #4a90e2;
+  padding-left: 1em;
+}
+
+/* Improved styling for math in text mode */
+.katex {
+  font-size: 1.1em;
+  line-height: normal;
+}
+
+/* Ensure proper spacing in inline math */
+.katex-inline-mode .katex {
+  margin: 0 0.1em;
+}
+
+/* Improve display of set notation */
+.katex .mord.amsrm {
+  font-family: 'Times New Roman', serif;
+}
+
+/* Improve display of math operators */
+.katex .mop {
+  margin-right: 0.15em;
+  margin-left: 0.15em;
+}
+
+/* Improve display of math functions */
+.katex .mop + .mopen {
+  margin-left: 0.05em;
+}
+
+/* Improve spacing for subscripts and superscripts */
+.katex .msupsub {
+  text-align: left;
+  margin-right: 0.05em;
+}
+
+/* Improve display of matrices */
+.katex .array {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Improve alignment in matrices */
+.katex .array > .col-align-c > .vlist-t > .vlist-r > .vlist {
+  text-align: center;
+}
+
+.katex .array > .col-align-l > .vlist-t > .vlist-r > .vlist {
+  text-align: left;
+}
+
+.katex .array > .col-align-r > .vlist-t > .vlist-r > .vlist {
+  text-align: right;
+}
+
+/* Styling for matrix environments */
+.katex-matrix-container {
+  margin: 1em 0;
+  text-align: center;
+}
+
+/* Styling for tabular environment */
+.katex-tabular {
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+.katex-tabular td {
+  padding: 0.3em 0.6em;
+  border: 1px solid #ddd;
+}
+
+/* Styling for equation environments */
+.katex-equation-container,
+.katex-align-container,
+.katex-gather-container,
+.katex-multline-container {
+  margin: 1em 0;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+/* Improve display of fractions */
+.katex .mfrac {
+  min-width: 1em;
+}
+
+/* Improve display of absolute value bars */
+.katex .delimsizing.mult .delim-size1 > .vlist-t:first-child > .vlist-r:first-child > .vlist > span {
+  border-color: #000;
+}
+
+/* Improve spacing for set notation */
+.katex .mopen, .katex .mclose {
+  margin: 0 0.05em;
+}
+
+/* Ensure proper spacing for subscripts in set notation */
+.katex .msupsub {
+  text-align: left;
+  margin-right: 0.1em;
+}
+
+/* Styling for Z (integers) symbol */
+.katex .mathbb {
+  font-family: 'KaTeX_AMS', 'Times New Roman', serif;
+}
+
+/* Ensure proper alignment of elements in S ∩ T notation */
+.katex .mbin {
+  margin: 0 0.2em;
+}
+
+/* Improve display of enumerate items */
+.katex-container ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.katex-container li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.katex-container li::before {
+  content: "•";
+  position: absolute;
+  left: -1rem;
+}

@@ -2,10 +2,55 @@
 import { useState } from 'react'
 import './App.css'
 import { MathRenderer } from './MathRenderer'
+import { KatexRenderer } from './KatexRenderer'
 
 function App() {
-  const [latexInput, setLatexInput] = useState<string>('E = mc^2')
-  const [renderText, setRenderText] = useState<string>('E = mc^2')
+  const [latexInput, setLatexInput] = useState<string>(`$\\left.\\begin{array}{l}\\text { (i) } A \\cup B=B \\cup A \\\\ \\text { (ii) } A \\cap B=B \\cap A\\end{array}\\right\\}$ Commutative law 
+ 
+$\\left.\\begin{array}{l}\\text { (i) }(A \\cup B) \\cup C=A \\cup(B \\cup C) \\\\ \\text { (ii) }(A \\cap B) \\cap C=A \\cap(B \\cap C)\\end{array}\\right\\}$ Associative law 
+ 
+$\\left.\\begin{array}{l}\\text { (i) } A \\cup \\phi=A \\\\ \\text { (ii) } \\phi \\cap A=\\phi\\end{array}\\right\\}$ Law of identity element 
+ 
+$\\left.\\begin{array}{l}\\text { - (i) } A \\cup A=A \\\\ \\text { (ii) } A \\cap A=A\\end{array}\\right\\}$ Idempotent law
+
+$a \\approx b$ Approximately equal
+$a \\sim b$ Similar to
+$a \\simeq b$ Asymptotically equal
+$a \\cong b$ Congruent to
+$a \\equiv b$ Equivalent to
+$a \\propto b$ Proportional to
+$A \\subset B$ Subset
+$A \\supset B$ Superset
+$A \\subseteq B$ Subset or equal
+$A \\supseteq B$ Superset or equal
+$A \\implies B$ Implies
+$A \\iff B$ If and only if
+$A \\Rightarrow B$ Implies
+$A \\Leftarrow B$ Is implied by
+$A \\Leftrightarrow B$ Equivalent to`)
+  const [renderText, setRenderText] = useState<string>(`$\\left.\\begin{array}{l}\\text { (i) } A \\cup B=B \\cup A \\\\ \\text { (ii) } A \\cap B=B \\cap A\\end{array}\\right\\}$ Commutative law 
+ 
+$\\left.\\begin{array}{l}\\text { (i) }(A \\cup B) \\cup C=A \\cup(B \\cup C) \\\\ \\text { (ii) }(A \\cap B) \\cap C=A \\cap(B \\cap C)\\end{array}\\right\\}$ Associative law 
+ 
+$\\left.\\begin{array}{l}\\text { (i) } A \\cup \\phi=A \\\\ \\text { (ii) } \\phi \\cap A=\\phi\\end{array}\\right\\}$ Law of identity element 
+ 
+$\\left.\\begin{array}{l}\\text { - (i) } A \\cup A=A \\\\ \\text { (ii) } A \\cap A=A\\end{array}\\right\\}$ Idempotent law
+
+$a \\approx b$ Approximately equal
+$a \\sim b$ Similar to
+$a \\simeq b$ Asymptotically equal
+$a \\cong b$ Congruent to
+$a \\equiv b$ Equivalent to
+$a \\propto b$ Proportional to
+$A \\subset B$ Subset
+$A \\supset B$ Superset
+$A \\subseteq B$ Subset or equal
+$A \\supseteq B$ Superset or equal
+$A \\implies B$ Implies
+$A \\iff B$ If and only if
+$A \\Rightarrow B$ Implies
+$A \\Leftarrow B$ Is implied by
+$A \\Leftrightarrow B$ Equivalent to`)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setLatexInput(e.target.value)
@@ -39,20 +84,23 @@ function App() {
         Render Equation
       </button>
       
-      <div className="mt-6">
-        <h2 className="text-xl font-semibold mb-2">Rendered Output:</h2>
-        <div className="p-4 border border-gray-300 rounded bg-gray-50 min-h-[100px]">
-          <MathRenderer text={renderText} />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="mt-6">
+          <h2 className="text-xl font-semibold mb-2">MathJax Renderer:</h2>
+          <div className="p-4 border border-gray-300 rounded bg-gray-50 min-h-[100px]">
+            <MathRenderer text={renderText} />
+          </div>
+        </div>
+        
+        <div className="mt-6">
+          <h2 className="text-xl font-semibold mb-2">KaTeX Renderer:</h2>
+          <div className="p-4 border border-gray-300 rounded bg-gray-50 min-h-[100px]">
+            <KatexRenderer text={renderText} />
+          </div>
         </div>
       </div>
       
-      <div className="mt-6">
-        <h3 className="text-lg font-semibold mb-2">Example LaTeX Equations:</h3>
-        <ul className="list-disc pl-5">
-          <li className="mb-1">Simple equation: <code>E = mc^2</code></li>
-          
-        </ul>
-      </div>
+      
     </div>
   )
 }
